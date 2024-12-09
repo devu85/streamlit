@@ -1,5 +1,4 @@
 import streamlit as st
-pip install streamlit transformers
 from transformers import pipeline
 
 # Load the text generation model
