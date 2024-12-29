@@ -17,7 +17,7 @@ try:
 
             # Function to Fetch Research Papers Using SerpAPI (Google Scholar Engine)
             def fetch_research_papers(interest, time_period):
-                api_key = "c29ba93a03faff0188d8e2991d125cabb08b188292cb1df10583fe6120a1bb54"
+                api_key = st.secrets["api_keys"]["serpapi_key"]
                 query = f"https://serpapi.com/search?engine=google_scholar&q={interest}&api_key={api_key}"
                 response = requests.get(query)
 
