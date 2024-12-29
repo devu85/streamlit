@@ -38,7 +38,7 @@ try:
             papers = fetch_research_papers(interest, time_period)
 
             if papers:
-                summarizer = pipeline("summarization")
+                summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
                 st.write("### Summaries of Research Papers")
 
                 for paper in papers:
@@ -46,7 +46,7 @@ try:
                     abstract = paper.get("abstract", "No abstract available")
 
                     if abstract:
-                        summary = summarizer(abstract, max_length=150, min_length=25, do_sample=False)
+                        summary = summarizer(abstract, max_length=50, min_length=25, do_sample=False)
                         st.write(f"**Title:** {title}")
                         st.write(f"**Summary:** {summary[0]['summary_text']}")
                         st.write("---")
